@@ -1,0 +1,27 @@
+body {
+   
+    max-height: 100vh;
+    width: 100%;
+    background-color:#0075c8;
+}
+
+.whitediv{
+    height: 380px;
+    background-color: white;
+}
+
+.spacer{
+    height: 20vh;
+}
+
+@media only screen and (max-width: 768px) {
+    /* For mobile phones: */
+    img{
+        width:70%;
+        text-align: center;
+    }
+    .whitediv{
+        width: 100%;
+        
+    }
+  }
