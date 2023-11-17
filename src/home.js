@@ -80,13 +80,17 @@ async function handleSubmit(e){
                 <div class="form-group row mt-4">
    
     <div class="col-sm-12">
-      <input type="email" class="form-control"placeholder='example@example.com' id="staticEmail"required />
+      <input onChange={function(e){
+        setUserName(e.target.value);
+      }} value={email} type="email" class="form-control"placeholder='example@example.com' id="staticEmail"required />
     </div>
   </div>
   <div class="form-group row">
    
     <div class="col-sm-12">
-      <input type="password" class="form-control"placeholder='password' id="inputPassword"required/>
+      <input onChange={function(e){
+        setPassword(e.target.value);
+      }} value={password} type="password" class="form-control"placeholder='password' id="inputPassword"required/>
     </div>
   </div>
 
